@@ -1,0 +1,27 @@
+-- demo JDBC 1
+
+CREATE DATABASE IF NOT EXISTS demo_jdbc;
+
+USE demo_jdbc;
+
+CREATE TABLE IF NOT EXISTS users(
+users_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR(150),
+last_name VARCHAR(150)
+);
+
+DROP TABLE users;
+
+SELECT * FROM users;
+
+
+CREATE DATABASE IF NOT EXISTS exo_jbdc1;
+
+USE exo_jbdc1;
+
+CREATE TABLE IF NOT EXISTS etudiants(
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nom VARCHAR(150),
+prenom VARCHAR(150),
+numClasse INT,
+dateDiplome VARCHAR(8));

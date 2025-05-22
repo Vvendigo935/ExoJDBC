@@ -12,3 +12,9 @@ dateDiplome VARCHAR(8));
 SELECT * FROM etudiants; -- afficher et vérifier la table
 
 DROP TABLE etudiants; -- en cas de pépin pour recommencer
+
+SELECT * FROM etudiants WHERE numClasse = 4; -- afficher uniquement les etudiants de la classe 4
+
+DELETE FROM etudiants WHERE id = 2; -- suppression de l'eleve a l'id 2
+
+SELECT * FROM etudiants;

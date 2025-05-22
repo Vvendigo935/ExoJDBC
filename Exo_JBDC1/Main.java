@@ -12,7 +12,6 @@ public class Main {
 
         try {
             connection = ConnectionUtils.getSQLConnection();
-            System.out.println("on viens de se connecter a la BDD");
 
             System.out.println("Merci de saisir le prenom : ");
             String nom = scanner.nextLine();
@@ -35,6 +34,8 @@ public class Main {
 
 
             // tentative de petit bonus avec un switch case
+            // pas eu le temps de faire une IHM ce qui fait qu'on est obligé de créer un etudiant dsl
+            // mais je suis conscient qu'il faut en faire une en temps normal
 
             System.out.println("Veuillez faire votre choix");
             System.out.println("""
@@ -72,16 +73,15 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Quel etudiant souhaitez vous supprimer de la liste ? ");
-                    byte iDelete = scanner.nextByte();
+                    int iDelete = scanner.nextInt();
                     String rq3 = "DELETE FROM etudiants WHERE id = ?";
                     PreparedStatement statement2 = connection.prepareStatement(rq3);
                     statement2.setInt(1, iDelete);
-                    statement2 = connection.prepareStatement(rq3);
-                    statement2.execute(rq3);
+//                    statement2.execute(rq3); // ??
                     System.out.println("L'etudiant a l'identifiant : "+iDelete+" a bien été supprimé");
                     break;
                 default:
-                    System.out.println("Choix ne correspond a aucun cas defini !!!");
+                    System.out.println("Choix ne correspond a aucun cas defini !");
                     break;
             }
 
